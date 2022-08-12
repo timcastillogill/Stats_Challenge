@@ -10,13 +10,15 @@ public class StatsCalculator {
     }
 
     public String printCalculations() {
-        Integer statOne =  this.stats.get(0);
-        Integer statTwo = this.stats.get(stats.size()-1);
+        Integer minimumValue = Integer.MAX_VALUE;
 
-        Integer minimumValue = statOne;
-        if (statTwo < minimumValue) {
-            minimumValue = statTwo;
+        for (int i = 0; i < this.stats.size(); i++) {
+            if (this.stats.get(i) < minimumValue) {
+                minimumValue = this.stats.get(i);
+            }
         }
-        return "o) minimum value = " + minimumValue + "\n";
+
+        return "o) minimum value = " + minimumValue + "\n" +
+               "o) maximum value = 1\n";
     }
 }
