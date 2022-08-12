@@ -35,11 +35,23 @@ class StatsCalculatorTest {
         assertTrue(result.contains(minimumValueMessage));
     }
     @Test
-    @DisplayName("Prints minimum value of larger stats")
-    void printMinimumValueOfLargerStats() {
+    @DisplayName("Prints minimum value of an ArrayList of 2 numbers")
+    void printMinimumValueOfTwoNumbers() {
         ArrayList<Integer> stats = new ArrayList<>(Arrays.asList(2,3));
         StatsCalculator statsCalculator = new StatsCalculator(stats);
         String minimumValueMessage = "o) minimum value = 2\n";
+
+        String result = statsCalculator.printCalculations();
+
+        assertTrue(result.contains(minimumValueMessage));
+    }
+
+    @Test
+    @DisplayName("Prints minimum value of an Array List of 3 numbers")
+    void printMinimumValueOfThreeNumbers() {
+        ArrayList<Integer> stats = new ArrayList<>(Arrays.asList(10,8, 13));
+        StatsCalculator statsCalculator = new StatsCalculator(stats);
+        String minimumValueMessage = "o) minimum value = 8\n";
 
         String result = statsCalculator.printCalculations();
 
