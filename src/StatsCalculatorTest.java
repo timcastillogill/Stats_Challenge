@@ -9,16 +9,40 @@ import static org.junit.jupiter.api.Assertions.*;
 class StatsCalculatorTest {
 
     @Test
-    @DisplayName("Example Test for ")
+    @DisplayName("Final example test")
     void printCalculations() {
         ArrayList<Integer> stats = new ArrayList<>(Arrays.asList(6, 9, 15, -2, 92, 11));
         StatsCalculator statsCalculator = new StatsCalculator(stats);
-
         String expected = "o) minimum value = -2\n" +
                 "o) maximum value = 92\n" +
                 "o) number of elements in the sequence = 6\n" +
                 "o) average value = 21.833333";
-        String assert = statsCalculator.printCalculations();
-        assertEquals(expected, assert);
+
+        String result = statsCalculator.printCalculations();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("Prints minimum value")
+    void printMinimumValue() {
+        ArrayList<Integer> stats = new ArrayList<>(Arrays.asList(1));
+        StatsCalculator statsCalculator = new StatsCalculator(stats);
+        String minimumValueMessage = "o) minimum value = 1\n";
+
+        String result = statsCalculator.printCalculations();
+
+        assertTrue(result.contains(minimumValueMessage));
+    }
+    @Test
+    @DisplayName("Prints minimum value of larger stats")
+    void printMinimumValueOfLargerStats() {
+        ArrayList<Integer> stats = new ArrayList<>(Arrays.asList(2,3));
+        StatsCalculator statsCalculator = new StatsCalculator(stats);
+        String minimumValueMessage = "o) minimum value = 2\n";
+
+        String result = statsCalculator.printCalculations();
+
+        assertTrue(result.contains(minimumValueMessage));
     }
 }
