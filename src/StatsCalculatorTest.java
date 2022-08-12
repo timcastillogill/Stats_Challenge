@@ -83,7 +83,6 @@ class StatsCalculatorTest {
 
 
     @Test
-    @Disabled
     @DisplayName("Prints maximum value of an Array List of 3 numbers")
     void printMaximumValueOfThreeNumbers() {
         ArrayList<Integer> stats = new ArrayList<>(Arrays.asList(10, 8, 13));
